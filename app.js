@@ -4,6 +4,7 @@ const checkButton = document.querySelector("#check-button");
 const output = document.querySelector("#output");
 
 
+
 function compareNumber(sum,dob) {
     if(sum % luckyNumber.value === 0)   {
         output.innerText = "Your birthday is lucky 🎊";
@@ -31,4 +32,5 @@ function calculateSum(dob) {
     }
     return sum;
 }
+alert("This is just for fun! We do not store any data.")
 checkButton.addEventListener("click", checkLuckyNumber);
