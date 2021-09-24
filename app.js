@@ -5,8 +5,8 @@ const output = document.querySelector("#output");
 
 
 
-function compareNumber(sum,dob) {
-    if(sum % luckyNumber.value === 0)   {
+function compareNumber(sum,luc) {
+    if(sum % luc === 0)   {
         output.innerText = "Your birthday is lucky 🎊";
     } else {
         output.innerText = "Your birthday is not lucky , don't be sad here's a gift for you 🎁";
@@ -14,9 +14,12 @@ function compareNumber(sum,dob) {
 }
 function checkLuckyNumber() {
     const dob = dateOfBirth.value;
+    const luc = luckyNumber.value;
     const sum = calculateSum(dob);
-    if(sum&&dob)  {
-        compareNumber(sum,dob);
+    if(luc&&dob && luc > 0)  {
+        compareNumber(sum,luc);
+    } else if(luc < 0){
+        output.innerText = "Invalid input. Number should be positive!!";
     } else{
         output.innerText = "Please enter both the values";
     }
